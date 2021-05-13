@@ -4,7 +4,16 @@
        x:Class="KURS.AppShell"
        xmlns:local="clr-namespace:KURS.Views"
        Title="Кошелёк">
-    <FlyoutItem Title="Login">
+
+
+    <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}"/>
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="SignUpPage" ContentTemplate="{DataTemplate local:SignUpPage}"/>
+    </TabBar>
+    <FlyoutItem Title="Cards">
+        <ShellContent Route="CardsPage" ContentTemplate="{DataTemplate local:CardsPage}"/>
     </FlyoutItem>
-</Shell>
+    <MenuItem Text="Logout" Clicked="MenuItem_Clicked"></MenuItem>
+</Shell> 

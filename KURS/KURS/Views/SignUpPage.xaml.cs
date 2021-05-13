@@ -8,16 +8,15 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using KURS.ViewModels;
-
 namespace KURS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class SignUpPage : ContentPage
     {
-        public LoginPage()
+        public SignUpPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel();
+            BindingContext = new SignUpViewModel();
         }
     }
 }

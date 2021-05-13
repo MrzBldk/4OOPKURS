@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KURS.Views.LoginPage">
+             x:Class="KURS.Views.SignUpPage">
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0"  VerticalOptions="Center" >
             <Entry/>
             <Entry IsPassword="True"/>
-            <Button Text="Log In" Command="{Binding LoginCommand}"/>
+            <Button Text="Sign Up" Command="{Binding SignUpCommand}"/>
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Sign Up"
+                        <Span Text="Log In"
                   TextColor="Blue"
                   TextDecorations="Underline">
                             <Span.GestureRecognizers>

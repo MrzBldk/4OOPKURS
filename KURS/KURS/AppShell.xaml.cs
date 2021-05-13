@@ -17,6 +17,13 @@ namespace KURS
         public AppShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute(nameof(AddCardPage), typeof(AddCardPage));
+            Routing.RegisterRoute(nameof(CardDetailPage), typeof(CardDetailPage));
+        }
+
+        private async void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            await Current.GoToAsync("//LoginPage");
         }
     }
 }

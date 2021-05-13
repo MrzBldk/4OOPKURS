@@ -12,12 +12,12 @@ using KURS.ViewModels;
 namespace KURS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class CardsPage : ContentPage
     {
-        public LoginPage()
+        public CardsPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel();
+            BindingContext = new CardsViewModel();
         }
     }
 }
