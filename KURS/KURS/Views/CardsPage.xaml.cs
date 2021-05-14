@@ -14,10 +14,16 @@ namespace KURS.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CardsPage : ContentPage
     {
+        CardsViewModel _viewModel;
         public CardsPage()
         {
             InitializeComponent();
-            BindingContext = new CardsViewModel();
+            BindingContext = _viewModel = new CardsViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
         }
     }
 }
