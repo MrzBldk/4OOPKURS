@@ -10,7 +10,7 @@ namespace KURS.Models
         public string TypeName { get; set; }
         public byte[] Photo { get; set; }
 
-        public ICollection<Card> Cards;
+        public ICollection<Card> Cards { get; set; }
         public CardType()
         {
             Cards = new List<Card>();

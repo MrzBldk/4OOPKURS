@@ -10,7 +10,7 @@ namespace KURS.Models
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public ICollection<Card> Cards;
+        public ICollection<Card> Cards { get; set; }
         public User()
         {
             Cards = new List<Card>();

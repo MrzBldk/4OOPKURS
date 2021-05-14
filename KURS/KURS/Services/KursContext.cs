@@ -8,15 +8,15 @@ namespace KURS.Services
 {
     public class KursContext : DbContext
     {
-        public DbSet<User> Users;
-        public DbSet<Card> Cards;
-        public DbSet<CardType> CardTypes;
+        public DbSet<User> Users { get; set; }
+        public DbSet<Card> Cards { get; set; }
+        public DbSet<CardType> CardTypes { get; set; }
 
         private string _databasePath;
         public KursContext(string databasePath)
         {
-            Database.EnsureCreated();
             _databasePath = databasePath;
+            Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

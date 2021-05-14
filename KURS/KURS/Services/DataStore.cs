@@ -21,6 +21,13 @@ namespace KURS.Services
             //db.CardTypes.Load();
             //db.Users.Load();
             //db.Cards.Load();
+            //var ct = new CardType { TypeName = "Test", Photo = new byte[12] };
+            //var user = new User { Login = "MrzBldk", Password = "P3z4e" };
+            //var card = new Card { Number = 123, User = user, CardType = ct };
+            //db.CardTypes.Add(ct);
+            //db.Users.Add(user);
+            //db.Cards.Add(card);
+            //db.SaveChanges();
             Cards = db.Cards.Where(x => x.User.Login == "MrzBldk").ToList();
         }
 
