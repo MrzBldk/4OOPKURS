@@ -20,13 +20,16 @@ namespace KURS.ViewModels
         public ObservableCollection<Card> Cards { get; }
         public Command LoadCardsCommand { get; }
         public Command AddCardCommand { get; }
-        DataStore ds = new DataStore();
+        public Command<Card> CardTapped { get; }
 
         public CardsViewModel()
         {
             Title = "Browse";
             Cards = new ObservableCollection<Card>();
             LoadCardsCommand = new Command(async () => await ExecuteLoadCardsCommand());
+
+            CardTapped = new Command<Card>(OnCardSelected);
+            
             AddCardCommand = new Command(OnAddCard);
         }
 

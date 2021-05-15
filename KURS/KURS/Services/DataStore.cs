@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 using Microsoft.EntityFrameworkCore;
@@ -56,6 +57,10 @@ namespace KURS.Services
         public async Task<List<Card>> GetCardsAsync()
         {
             return await Task.FromResult(Cards);
+        }
+        public List<CardType> GetCardTypes()
+        {
+            return db.CardTypes.Where(x=>true).ToList();
         }
     }
 }

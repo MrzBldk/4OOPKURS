@@ -1,4 +1,6 @@
 ﻿using KURS.Views;
+using KURS.Models;
+using KURS.Services;
 
 using System.ComponentModel;
 using System;
@@ -10,6 +12,8 @@ namespace KURS.ViewModels
 {
     class BaseViewModel: INotifyPropertyChanged
     {
+         public DataStore ds = new DataStore();
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {

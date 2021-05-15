@@ -1,18 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KURS.Views.CardsPage">
+             x:Class="KURS.Views.CardsPage"
+             xmlns:local="clr-namespace:KURS.ViewModels"
+             xmlns:model="clr-namespace:KURS.Models">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text ="Add" Command="{Binding AddCardCommand}"/>
     </ContentPage.ToolbarItems>
-    <RefreshView Command="{Binding LoadCardsCommand}" 
+    <RefreshView x:DataType="local:CardsViewModel"
+                 Command="{Binding LoadCardsCommand}" 
                  IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <CollectionView x:Name="CardListView" ItemsSource="{Binding Cards}"
                         SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10">
+                    <StackLayout x:DataType="model:Card" Padding="10">
                         <Label Text="{Binding Number}"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:CardsViewModel}},
+                                Path=CardTapped}"
+                                CommandParameter="{Binding .}"/>
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

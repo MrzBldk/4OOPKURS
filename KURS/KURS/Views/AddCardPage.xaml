@@ -1,12 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KURS.Views.AddCardPage">
+             x:Class="KURS.Views.AddCardPage"
+             xmlns:model="clr-namespace:KURS.Models"
+             xmlns:local ="clr-namespace:KURS.ViewModels">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Type" FontSize="Medium"/>
+            <Picker ItemsSource="{Binding CardTypes}"               
+                    SelectedItem="{Binding SelectedCardType}"/>
+            <Label Text="Number" FontSize="Medium"/>
+            <Entry Text="{Binding Number, Mode=TwoWay}" FontSize="Medium"/>
+            <StackLayout>
+                <Button Text="Cancel" Command="{Binding CancelCommand}"
+                        HorizontalOptions="FillAndExpand"/>
+                <Button Text="Save" Command="{Binding SaveCommand}"
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
