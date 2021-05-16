@@ -56,6 +56,7 @@ namespace KURS.Services
         }
         public async Task<List<Card>> GetCardsAsync()
         {
+            Cards = db.Cards.Where(x => x.User.Login == "MrzBldk").ToList();
             return await Task.FromResult(Cards);
         }
         public List<CardType> GetCardTypes()

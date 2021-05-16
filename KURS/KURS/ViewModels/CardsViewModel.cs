@@ -73,7 +73,7 @@ namespace KURS.ViewModels
         {
             if (card == null)
                 return;
-            await Shell.Current.GoToAsync(nameof(CardDetailPage));
+            await Shell.Current.GoToAsync($"{nameof(CardDetailPage)}?{nameof(CardDetailViewModel.CardId)}={card.Id}");
         }
 
         private async void OnAddCard(object obj)

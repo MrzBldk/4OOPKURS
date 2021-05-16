@@ -4,8 +4,8 @@
              x:Class="KURS.Views.LoginPage">
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0"  VerticalOptions="Center" >
-            <Entry/>
-            <Entry IsPassword="True"/>
+            <Entry Text="{Binding Login}"/>
+            <Entry Text="{Binding Password}" IsPassword="True"/>
             <Button Text="Log In" Command="{Binding LoginCommand}"/>
             <Label>
                 <Label.FormattedText>

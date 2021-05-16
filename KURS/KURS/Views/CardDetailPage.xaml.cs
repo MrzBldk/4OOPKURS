@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using KURS.ViewModels;
+
 namespace KURS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,6 +17,7 @@ namespace KURS.Views
         public CardDetailPage()
         {
             InitializeComponent();
+            BindingContext = new CardDetailViewModel();
         }
     }
 }

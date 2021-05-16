@@ -4,9 +4,8 @@
              x:Class="KURS.Views.CardDetailPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Number:" FontSize="Medium"/>
+            <Label Text="{Binding Number}" FontSize="Small"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
