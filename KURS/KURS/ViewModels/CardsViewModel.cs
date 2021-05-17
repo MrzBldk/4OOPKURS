@@ -41,7 +41,9 @@ namespace KURS.ViewModels
                 Cards.Clear();
                 var cards = await ds.GetCardsAsync();
                 foreach (var card in cards)
+                {
                     Cards.Add(card);
+                }
             }
             catch(Exception ex)
             {

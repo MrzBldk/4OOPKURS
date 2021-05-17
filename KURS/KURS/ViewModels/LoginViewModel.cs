@@ -18,7 +18,7 @@ namespace KURS.ViewModels
             get => login;
             set => SetProperty(ref login, value);
         }
-        private string Password
+        public string Password
         {
             get => password;
             set => SetProperty(ref password, value);
@@ -33,10 +33,10 @@ namespace KURS.ViewModels
         }
         private async void OnLoginClicked(object obj)
         {
-            if (login != "MrzBldk" && Password != "P3z4e")
-                await Shell.Current.DisplayAlert("", "Wrong login or password ", "Cancel");
-            else
+            if (ds.GetUser(login, password))
                 await Shell.Current.GoToAsync($"//{nameof(CardsPage)}");
+            else
+                await Shell.Current.DisplayAlert("", "Wrong login or password", "Cancel");
         }
         private async void OnSignupClicked(object obj)
         {

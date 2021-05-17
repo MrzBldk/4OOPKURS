@@ -19,17 +19,7 @@ namespace KURS.Services
         public DataStore()
         {
             db = new KursContext(DependencyService.Get<IPath>().GetDatabasePath("Kurs.db"));
-            //db.CardTypes.Load();
-            //db.Users.Load();
-            //db.Cards.Load();
-            //var ct = new CardType { TypeName = "Test", Photo = new byte[12] };
-            //var user = new User { Login = "MrzBldk", Password = "P3z4e" };
-            //var card = new Card { Number = 123, User = user, CardType = ct };
-            //db.CardTypes.Add(ct);
-            //db.Users.Add(user);
-            //db.Cards.Add(card);
-            //db.SaveChanges();
-            Cards = db.Cards.Where(x => x.User.Login == "MrzBldk").ToList();
+            Cards = db.Cards.Include(p=>p.CardType).Where(x => x.User.Login == "MrzBldk").ToList();
         }
 
         public async Task<int> AddCardAsync(Card card)
@@ -52,16 +42,39 @@ namespace KURS.Services
         }
         public async ValueTask<Card> GetCardAsync(int id)
         {
-            return await db.Cards.FindAsync(id);
+            return await db.Cards.Include(x => x.CardType).Where(x => x.Id == id).FirstAsync();
+            //return await db.Cards.FindAsync(id);
         }
         public async Task<List<Card>> GetCardsAsync()
         {
-            Cards = db.Cards.Where(x => x.User.Login == "MrzBldk").ToList();
+            Cards = db.Cards.Include(x=>x.CardType).Where(x => x.UserId == App.User.Id).ToList();
             return await Task.FromResult(Cards);
         }
         public List<CardType> GetCardTypes()
         {
-            return db.CardTypes.Where(x=>true).ToList();
+            return db.CardTypes.Where(x => true).ToList();
+        }
+        public bool GetUser(string log, string pas)
+        {
+            User user;
+            if ((user = db.Users.Where(x => x.Login == log && x.Password == pas).FirstOrDefault()) != null)
+            {
+                App.User = user;
+                return true;
+            }
+            return false;
+        }
+        public bool SetUser(string log, string pas)
+        {
+            User user;
+            if ((db.Users.Where(x => x.Login == log).FirstOrDefault()) != null)
+            {
+                return false;
+            }
+            db.Users.Add(user = new User() { Login = log, Password = pas });
+            db.SaveChanges();
+            App.User = user;
+            return true;
         }
     }
 }

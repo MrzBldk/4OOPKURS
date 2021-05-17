@@ -40,7 +40,7 @@ namespace KURS.ViewModels
             {
                 Number = long.Parse(Number),
                 CardType = SelectedCardType,
-                UserId = 1
+                UserId = App.User.Id
             };
             await ds.AddCardAsync(newCard);
         }

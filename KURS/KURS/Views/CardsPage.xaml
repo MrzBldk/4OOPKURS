@@ -3,7 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KURS.Views.CardsPage"
              xmlns:local="clr-namespace:KURS.ViewModels"
-             xmlns:model="clr-namespace:KURS.Models">
+             xmlns:model="clr-namespace:KURS.Models"
+             xmlns:service="clr-namespace:KURS.Services">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <service:ByteImageConverter x:Key="conv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text ="Add" Command="{Binding AddCardCommand}"/>
     </ContentPage.ToolbarItems>
@@ -15,7 +21,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout x:DataType="model:Card" Padding="10">
-                        <Label Text="{Binding Number}"/>
+                        <Image Source="{Binding CardType.Photo, Converter={StaticResource conv}}"/>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
