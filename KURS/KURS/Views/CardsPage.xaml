@@ -14,14 +14,14 @@
         <ToolbarItem Text ="Add" Command="{Binding AddCardCommand}"/>
     </ContentPage.ToolbarItems>
     <RefreshView x:DataType="local:CardsViewModel"
-                 Command="{Binding LoadCardsCommand}" 
+                 Command="{Binding LoadCardsCommand}"
                  IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <CollectionView x:Name="CardListView" ItemsSource="{Binding Cards}"
                         SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout x:DataType="model:Card" Padding="10">
-                        <Image Source="{Binding CardType.Photo, Converter={StaticResource conv}}"/>
+                        <Image Source="{Binding CardType.Photo, Converter={StaticResource conv}, Mode=OneWay}"/>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
