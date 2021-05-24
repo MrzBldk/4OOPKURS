@@ -15,5 +15,14 @@
     <FlyoutItem Title="Cards">
         <ShellContent Route="CardsPage" ContentTemplate="{DataTemplate local:CardsPage}"/>
     </FlyoutItem>
+    <FlyoutItem Title="Settings">
+        <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="About">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Tech Support">
+        <ShellContent Route="TechSupportPage" ContentTemplate="{DataTemplate local:TechSupportPage}"/>
+    </FlyoutItem>
     <MenuItem Text="Logout" Clicked="MenuItem_Clicked"></MenuItem>
 </Shell> 

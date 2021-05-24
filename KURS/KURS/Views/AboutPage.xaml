@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KURS.Views.AboutPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Version 0.6"/>
+            <Label/>
+            <Label Text="Site:"/>
+            <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Koshelek.by"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SiteCommand}"/>
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+            </Label>
+            <Label/>
+            <Label Text="Contact Phone:"/>
+            <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="+375257554339"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PhoneCommand}"/>
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+            </Label>
+            <Label/>
+            <Label Text="Adress:"/>
+            <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Belarus, Minsk, Lubimova 12"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding AdressCommand}"/>
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

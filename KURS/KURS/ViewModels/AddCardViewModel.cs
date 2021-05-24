@@ -32,6 +32,7 @@ namespace KURS.ViewModels
             CardTypes = ds.GetCardTypes();
             SaveCommand = new Command(onSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
+            PropertyChanged +=(_, __) => SaveCommand.ChangeCanExecute();
         }
 
         private async void onSave()
@@ -46,7 +47,7 @@ namespace KURS.ViewModels
         }
         private bool ValidateSave()
         {
-            return true; //!string.IsNullOrWhiteSpace(number);
+            return long.TryParse(number, out _);
         }
         private async void OnCancel()
         {

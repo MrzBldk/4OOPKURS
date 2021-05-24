@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KURS.Views.SettingsPage"
+             xmlns:service="clr-namespace:KURS.Services">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <service:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <CheckBox IsChecked="{Binding UseDeviceThemeSettings}" VerticalOptions="Center" />
+                <Label Text="Use device settings"
+            VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout
+    IsVisible="{Binding UseDeviceThemeSettings, Converter={StaticResource InvertedBoolConverter}}"
+    Orientation="Horizontal"
+    Spacing="10">
+                <CheckBox IsChecked="{Binding UseDarkMode}" VerticalOptions="Center"/>
+                <Label Text="Dark Theme"
+            VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout
+    IsVisible="{Binding UseDeviceThemeSettings, Converter={StaticResource InvertedBoolConverter}}"
+    Orientation="Horizontal"
+    Spacing="10">
+                <CheckBox IsChecked="{Binding UseLightMode}" VerticalOptions="Center"/>
+                <Label Text="Light Theme"
+            VerticalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
