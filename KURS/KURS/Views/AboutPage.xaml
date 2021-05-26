@@ -4,13 +4,13 @@
              x:Class="KURS.Views.AboutPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Version 0.6"/>
+            <Label Text="Version 1.0"/>
             <Label/>
             <Label Text="Site:"/>
             <Label>
             <Label.FormattedText>
                 <FormattedString>
-                    <Span Text="Koshelek.by"
+                    <Span Text="Koshelyok.by"
                   TextColor="Blue"
                   TextDecorations="Underline">
                         <Span.GestureRecognizers>

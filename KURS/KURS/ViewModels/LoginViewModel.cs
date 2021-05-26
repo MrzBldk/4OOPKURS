@@ -4,6 +4,7 @@ using System.Text;
 using System.Diagnostics;
 
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 using KURS.Views;
 
@@ -36,7 +37,22 @@ namespace KURS.ViewModels
             if (ds.GetUser(login, password))
                 await Shell.Current.GoToAsync($"//{nameof(CardsPage)}");
             else
-                await Shell.Current.DisplayAlert("", "Wrong login or password", "Cancel");
+            {
+                try
+                {
+                    var duration = TimeSpan.FromSeconds(1);
+                    Vibration.Vibrate(duration);
+                }
+                catch (FeatureNotSupportedException ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+                await Shell.Current.DisplayAlert("", "Wrong login or password", "Cancel"); 
+            }
         }
         private async void OnSignupClicked(object obj)
         {

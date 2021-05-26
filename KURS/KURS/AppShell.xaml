@@ -5,24 +5,33 @@
        xmlns:local="clr-namespace:KURS.Views"
        Title="Кошелёк">
 
-
+<Shell.FlyoutHeader>
+        <StackLayout Padding="10">
+            <Image HeightRequest="100" Source="mainicon.png" />
+            <Label Text="Wallet" FontFamily="Monoton" FontSize="60" HorizontalTextAlignment="Center" TextColor="#42C0FB"/>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="{AppThemeBinding Light=Black, Dark=White}"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}"/>
     </TabBar>
     <TabBar>
         <ShellContent Route="SignUpPage" ContentTemplate="{DataTemplate local:SignUpPage}"/>
     </TabBar>
-    <FlyoutItem Title="Cards">
+    <FlyoutItem Icon="card.png" Title="Cards">
         <ShellContent Route="CardsPage" ContentTemplate="{DataTemplate local:CardsPage}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Settings">
+    <FlyoutItem Icon="discount.png" Title="Discounts">
+        <ShellContent Route="DiscountPage" ContentTemplate="{DataTemplate local:DiscountPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Icon="settings.png" Title="Settings">
         <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}"/>
     </FlyoutItem>
-    <FlyoutItem Title="About">
+    <FlyoutItem Icon="about.png" Title="About">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Tech Support">
+    <FlyoutItem Icon="support.png" Title="Tech Support">
         <ShellContent Route="TechSupportPage" ContentTemplate="{DataTemplate local:TechSupportPage}"/>
     </FlyoutItem>
-    <MenuItem Text="Logout" Clicked="MenuItem_Clicked"></MenuItem>
+    <MenuItem Text="Logout" Clicked="MenuItem_Clicked"/>
 </Shell> 

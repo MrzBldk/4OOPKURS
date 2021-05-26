@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KURS.Views.DiscountPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding Loc}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Get Current discounts" Command="{Binding GeoCommand}"/>
+            <Image Source="{Binding Img}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
