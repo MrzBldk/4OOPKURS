@@ -10,6 +10,13 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Current password"/>
+            <Entry IsPassword="True" Text="{Binding Oldpass}"/>
+            <Label Text="New password"/>
+            <Entry IsPassword="True" Text="{Binding Newpass}"/>
+            <Button Text="Change password" Command="{Binding PasswordCommand}"></Button>
+        </StackLayout>
+        <!--<StackLayout>
             <StackLayout Orientation="Horizontal" Spacing="10">
                 <CheckBox IsChecked="{Binding UseDeviceThemeSettings}" VerticalOptions="Center" />
                 <Label Text="Use device settings"
@@ -33,6 +40,6 @@
                 <Label Text="Light Theme"
             VerticalOptions="Center"/>
             </StackLayout>
-        </StackLayout>
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>

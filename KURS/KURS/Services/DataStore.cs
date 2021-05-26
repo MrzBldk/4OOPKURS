@@ -76,5 +76,12 @@ namespace KURS.Services
             App.User = user;
             return true;
         }
+        public async Task ChangePassword(string pas)
+        {
+            User user = db.Users.Where(x => x.Login == App.User.Login).FirstOrDefault();
+            user.Password = pas;
+            await db.SaveChangesAsync();
+            App.User = user;
+        }
     }
 }
