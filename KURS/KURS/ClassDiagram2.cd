@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KURS.ViewModels.BaseViewModel">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAIEAAAABAgAEAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KURS.ViewModels.AboutViewModel">
+    <Position X="2.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAEAAAAAAAAAAACwAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\AboutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KURS.ViewModels.AddCardViewModel">
+    <Position X="4.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAQCAAAAAAQAQAAEAACAAAAAgAAAAAAAAAABAEAAA=</HashCode>
+      <FileName>ViewModels\AddCardViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KURS.ViewModels.CardDetailViewModel">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAASAAAAIAAAQCAAAEAAAAAAAAAQAAAIAAAAAAgAAAA=</HashCode>
+      <FileName>ViewModels\CardDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KURS.ViewModels.CardsViewModel">
+    <Position X="8.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgABABAgABAAAAQAAABAIAAAAAAAAAAAAAAEAAAE=</HashCode>
+      <FileName>ViewModels\CardsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KURS.ViewModels.DiscountViewModel">
+    <Position X="10.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQAAAAEAAAAAAACAAAAAgAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ViewModels\DiscountViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KURS.ViewModels.LoginViewModel">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAIAAAAAAAAAAAAAAAAAAAAAAAACAAASAgCAEAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KURS.ViewModels.SettingsViewModel">
+    <Position X="12.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAACAAAACgAAAAgAAAAAAAAAQAA=</HashCode>
+      <FileName>ViewModels\SettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KURS.ViewModels.SignUpViewModel">
+    <Position X="14" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAACIAAAAAAAAAAAAAAAAAAAAAAAACAAASAgAAEAA=</HashCode>
+      <FileName>ViewModels\SignUpViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KURS.ViewModels.TechSupportViewModel">
+    <Position X="16" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAIAAAACAAAAAA=</HashCode>
+      <FileName>ViewModels\TechSupportViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

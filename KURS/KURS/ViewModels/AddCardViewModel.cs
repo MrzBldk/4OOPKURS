@@ -44,10 +44,11 @@ namespace KURS.ViewModels
                 UserId = App.User.Id
             };
             await ds.AddCardAsync(newCard);
+            await Shell.Current.GoToAsync("..");
         }
         private bool ValidateSave()
         {
-            return long.TryParse(number, out _);
+            return long.TryParse(number, out _) && SelectedCardType != null;
         }
         private async void OnCancel()
         {
