@@ -8,6 +8,8 @@ using System.ComponentModel;
 using KURS.Models;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
+using Xamarin.Essentials;
 
 namespace KURS.Services
 {
@@ -19,6 +21,45 @@ namespace KURS.Services
         public DataStore()
         {
             db = new KursContext(DependencyService.Get<IPath>().GetDatabasePath("Kurs.db"));
+            if (db.CardTypes.Count() == 0)
+            {
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    for (int i = 1; i < 15; i++)
+                    {
+                        string[] tn = { "O'STIN", "Виталюр", "Рублёвский", "Санта", "Минсктранс", "Белфармация", "Остров Чистоты", "MEGATOP", "Соседи", "Магия", "Prostore", "5 элемент", "MINIMAX", "Евроопт" };
+                        byte[] data;
+                        Stream s = FileSystem.OpenAppPackageFileAsync($"{i}.png").Result;
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            s.CopyTo(ms);
+                            data = ms.ToArray();
+                            ms.Dispose();
+                        }
+                        CardType cd1 = new CardType { TypeName = tn[i-1], Photo = data };
+                        db.CardTypes.Add(cd1);
+                        db.SaveChanges();
+                    }
+                }
+                else if (Device.RuntimePlatform == Device.UWP)
+                {
+                    for (int i = 1; i < 15; i++)
+                    {
+                        string[] tn = { "O'STIN", "Виталюр", "Рублёвский", "Санта", "Минсктранс", "Белфармация", "Остров Чистоты", "MEGATOP", "Соседи", "Магия", "Prostore", "5 элемент", "MINIMAX", "Евроопт" };
+                        byte[] data;
+                        Stream s = FileSystem.OpenAppPackageFileAsync($"Assets/{i}.png").Result;
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            s.CopyTo(ms);
+                            data = ms.ToArray();
+                            ms.Dispose();
+                        }
+                        CardType cd1 = new CardType { TypeName = tn[i - 1], Photo = data };
+                        db.CardTypes.Add(cd1);
+                        db.SaveChanges();
+                    }
+                }
+            }
             Cards = db.Cards.Include(p=>p.CardType).Where(x => x.User.Login == "MrzBldk").ToList();
         }
 
